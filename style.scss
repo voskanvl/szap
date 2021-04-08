@@ -22,7 +22,7 @@ body {
     padding: 0;
     margin: 0;
     height: 100vh;
-    overflow: hidden;
+    // overflow: hidden;
     font-family: "Montserrat";
     font-size: 16px;
     font-weight: 400;
@@ -96,6 +96,7 @@ body {
             & > img {
                 width: 100%;
                 height: auto;
+                filter: drop-shadow(2px 2px 6px black);
             }
         }
         & > .description {
@@ -199,6 +200,41 @@ body {
         &::after {
             border-width: 10px 5px 0px 5px;
             border-color: black transparent transparent transparent;
+        }
+    }
+}
+.manager {
+    width: 22vw;
+    position: absolute;
+    bottom: 3rem;
+    left: 11.11vw;
+    transform: translateX(-50%);
+    margin-bottom: 1rem;
+    & > .container {
+        & > .manager-image__container {
+            width: 50%;
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            box-shadow: $shadow;
+            overflow: hidden;
+            & > .manager-image__dummy {
+                margin-top: 100%;
+            }
+            & > img {
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+        }
+        & > .manager-name,
+        & > .manager-contact {
+            padding-top: 1rem;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
         }
     }
 }
