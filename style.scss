@@ -9,7 +9,14 @@ h5 {
     font-family: "Oswald";
 }
 h1 {
-    font-size: 4rem;
+    font-size: 5vw;
+}
+h2 {
+    font-size: 4vw;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 body {
     padding: 0;
@@ -19,7 +26,7 @@ body {
     font-family: "Montserrat";
     font-size: 16px;
     font-weight: 400;
-    & > * {
+    & * {
         box-sizing: border-box;
     }
 }
@@ -49,6 +56,53 @@ body {
     width: 75vw;
     height: 66.66vh;
     background-color: #ffa451;
+    & > .main-panel__container {
+        padding: 1rem 1rem 1rem 8rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        height: 100%;
+        & > .images-carousel {
+            position: relative;
+            & > .images-carousel__container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                overflow: scroll;
+                & > .images-carousel__item {
+                    & > .images-carousel__item-img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                & > .images-carousel__pointer {
+                    right: -1rem;
+                    top: 1rem;
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 20px 40px 20px 0px;
+                    border-color: transparent #bf3f32 transparent transparent;
+                    filter: drop-shadow($shadow);
+                }
+            }
+        }
+        & > .current-image {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            & > img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        & > .description {
+            width: 100%;
+            overflow: scroll;
+        }
+    }
 }
 .specification {
     top: 33.33vh;
@@ -77,12 +131,15 @@ body {
     height: 20vh;
     background-color: #bf3f32;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     & > .select-carousel__container {
         margin: 1rem;
         overflow: scroll;
         display: flex;
         // width: min-content;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         align-items: center;
         & > .select-carousel__item {
             & > .select-carousel__item-img {
@@ -105,5 +162,43 @@ body {
         border-width: 0 20px 40px 20px;
         border-color: transparent transparent #fca742 transparent;
         filter: drop-shadow($shadow);
+    }
+}
+
+.control {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    box-shadow: $shadow;
+    &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+    &.up {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        &::after {
+            border-width: 0 5px 10px 5px;
+            border-color: transparent transparent black transparent;
+        }
+    }
+    &.down {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        &::after {
+            border-width: 10px 5px 0px 5px;
+            border-color: black transparent transparent transparent;
+        }
     }
 }
