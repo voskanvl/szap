@@ -1,0 +1,109 @@
+/** @format */
+$shadow: 4px 4px 16px #0007;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&family=Oswald:wght@200;400;700&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Oswald";
+}
+h1 {
+    font-size: 4rem;
+}
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 400;
+    & > * {
+        box-sizing: border-box;
+    }
+}
+.background {
+    width: 100%;
+    & > .background__leftside {
+        width: 33.33vw;
+        height: 100vh;
+        background-color: #f9785880;
+    }
+}
+.panel {
+    position: absolute;
+    margin: 1rem 0;
+    box-shadow: $shadow;
+}
+.panel-right {
+    border-radius: 2rem 0 0 2rem;
+    right: 0;
+}
+.panel-left {
+    border-radius: 0 2rem 2rem 0;
+    left: 0;
+}
+.main-panel {
+    top: 0;
+    width: 75vw;
+    height: 66.66vh;
+    background-color: #ffa451;
+}
+.specification {
+    top: 33.33vh;
+    width: 33.33vw;
+    height: 44vh;
+    background-color: #eee;
+    transform: translateY(-50%);
+    overflow: scroll;
+    & > .specifiction__text {
+        padding: 1rem;
+        columns: 2;
+        column-rule: dotted #ffa451;
+    }
+}
+.title {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 16.66vw;
+    transform: translateX(-50%);
+}
+.select-carousel {
+    bottom: 0;
+    width: 75vw;
+    height: 20vh;
+    background-color: #bf3f32;
+    margin-bottom: 2rem;
+    & > .select-carousel__container {
+        margin: 1rem;
+        overflow: scroll;
+        display: flex;
+        // width: min-content;
+        justify-content: space-evenly;
+        align-items: center;
+        & > .select-carousel__item {
+            & > .select-carousel__item-img {
+                width: auto;
+                height: 12vh;
+            }
+            & > .select-carousel__item-text {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    & > .select-carousel__pointer {
+        bottom: -1rem;
+        right: 21rem;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 20px 40px 20px;
+        border-color: transparent transparent #fca742 transparent;
+        filter: drop-shadow($shadow);
+    }
+}
