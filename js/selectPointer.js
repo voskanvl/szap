@@ -24,6 +24,7 @@ calculateItemCenter();
 let currentEl = 0;
 
 export const selectPointer = current => {
+    calculateItemCenter();
     currentEl = current;
     const left = items[current].center;
     _(left, pointer);
