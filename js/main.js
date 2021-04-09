@@ -20,7 +20,7 @@ const setNewIndex = x => {
     imagesItems = $$(".images-carousel__item");
     imagesItems.forEach((e, i) => {
         e.addEventListener("click", () => {
-            _(i), setNewImage(i);
+            setNewImage(i);
         });
     });
 };

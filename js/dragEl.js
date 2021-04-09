@@ -30,7 +30,6 @@ document.addEventListener("mousemove", e => {
     }
 });
 dragEl.addEventListener("dblclick", () => {
-    console.log("doubleclick");
     panelEnd
         ? gsap.to(panel, { width: panelWidth, ease: "bounce.out" })
         : gsap.to(panel, {

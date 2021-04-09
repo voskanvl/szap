@@ -12,7 +12,6 @@ let loadedImages = 0;
 itemImages.forEach((e, i) => {
     e.addEventListener("load", () => {
         loadedImages++;
-        _("load", i, loadedImages);
     });
 });
 export const calculateItemCenter = () =>
