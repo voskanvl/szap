@@ -3,7 +3,7 @@ import { $, $$, _ } from "./shorts.js";
 import data from "../data.json";
 const selectCarouselContainer = $(".select-carousel__container");
 
-const createNewSelectItem = index => {
+export const createNewSelectItem = index => {
     const selectCarouselItemText = document.createElement("div");
     selectCarouselItemText.classList.add("select-carousel__item-text");
     selectCarouselItemText.innerText = data[index].name;

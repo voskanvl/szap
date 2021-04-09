@@ -1,8 +1,8 @@
 /** @format */
 $shadow: 4px 4px 8px #0007;
 $canvas: inset 2px 2px 2px white, inset -2px -2px 2px #5557, $shadow;
-@import url("./manager.scss");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&family=Oswald:wght@200;400;700&display=swap");
+@import "manager";
 h1,
 h2,
 h3,
@@ -81,17 +81,6 @@ body {
                         height: auto;
                     }
                 }
-            }
-            & > .images-carousel__pointer {
-                right: -1rem;
-                top: 1rem;
-                position: absolute;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 20px 40px 20px 0px;
-                border-color: transparent #bf3f32 transparent transparent;
-                filter: drop-shadow($shadow);
             }
         }
         & > .current-image {
@@ -192,6 +181,7 @@ body {
         justify-content: flex-start;
         align-items: center;
         & > .select-carousel__item {
+            cursor: pointer;
             & > .select-carousel__item-img {
                 width: auto;
                 height: 12vh;
@@ -261,6 +251,17 @@ body {
     border-width: 0 20px 40px 20px;
     border-color: transparent transparent #fca742 transparent;
     filter: drop-shadow(0 2px 6px black);
+}
+.images-carousel__pointer {
+    right: -1rem;
+    top: 1rem;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 40px 20px 0px;
+    border-color: transparent #bf3f32 transparent transparent;
+    filter: drop-shadow($shadow);
 }
 .manager > .container > .manager-image__container {
     box-shadow: $canvas;

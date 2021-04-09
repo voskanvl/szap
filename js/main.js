@@ -1,4 +1,5 @@
 /** @format */
+import "regenerator-runtime/runtime.js";
 import "./init";
 import "./dragEl.js";
 
@@ -11,9 +12,9 @@ const items = $$(".select-carousel__item");
 
 let currentIndex = 0;
 
-const setNewIndex = x => {
+const setNewIndex = async x => {
     currentIndex = x;
-    setIndex(x);
+    await setIndex(x);
 };
 
 items.forEach((e, i) => {

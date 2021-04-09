@@ -32,10 +32,10 @@ document.addEventListener("mousemove", e => {
 dragEl.addEventListener("dblclick", () => {
     console.log("doubleclick");
     panelEnd
-        ? gsap.to(panel, { width: panelWidth, ease: "elastic.out(1,0.2)" })
+        ? gsap.to(panel, { width: panelWidth, ease: "bounce.out" })
         : gsap.to(panel, {
               width: panelWidth * 2,
-              ease: "elastic.out(1,0.2)",
+              ease: "bounce.out",
           });
     panelEnd = !panelEnd;
 });
