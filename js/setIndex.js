@@ -3,6 +3,8 @@
 import { $, $$, _ } from "./shorts.js";
 import { gsap } from "gsap";
 import data from "../data.json";
+import { selectPointer } from "./selectPointer";
+import { imagesPointer } from "./imagesPointer";
 
 const specification = $(".specification__text");
 const descriptionTitle = $(".description__title");
@@ -39,13 +41,13 @@ export const setDescription = x => {
     });
     descriptionText.innerText = data[x].description;
 };
-export const setCurrentImage = x => {
+export const setCurrentImage = idx => x => {
     gsap.from(currentImage, {
         opacity: 0,
         duration: 1,
         ease: "power2.in",
     });
-    currentImage.setAttribute("src", data[x].images.main);
+    currentImage.setAttribute("src", data[idx].images.additional[x]);
 };
 
 const shake = () => {
@@ -92,12 +94,13 @@ export const createNewImagesItems = index => {
     imagesCarouselContainer.innerHTML = result;
 };
 
-const setIndex = async x => {
+const setIndex = x => {
     selectPointer(x);
+    imagesPointer(0);
     setSpecification(x);
     setName(x);
     setDescription(x);
-    setCurrentImage(x);
+    setCurrentImage(x)(0);
     createNewImagesItems(x);
     shake();
 };

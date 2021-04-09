@@ -6,23 +6,34 @@ import "./dragEl.js";
 import { selectPointer } from "./selectPointer";
 import data from "../data.json";
 import { $, $$, _ } from "./shorts.js";
-import setIndex from "./setIndex.js";
+import setIndex, { setCurrentImage } from "./setIndex.js";
+import { imagesPointer } from "./imagesPointer";
 
-const items = $$(".select-carousel__item");
+const selectItems = $$(".select-carousel__item");
+let imagesItems = $$(".images-carousel__item");
 
 let currentIndex = 0;
 
-const setNewIndex = async x => {
+const setNewIndex = x => {
     currentIndex = x;
-    await setIndex(x);
+    setIndex(x);
+    imagesItems = $$(".images-carousel__item");
+    imagesItems.forEach((e, i) => {
+        e.addEventListener("click", () => {
+            _(i), setNewImage(i);
+        });
+    });
 };
 
-items.forEach((e, i) => {
+const setNewImage = x => {
+    setCurrentImage(currentIndex)(x);
+    imagesPointer(x);
+};
+
+selectItems.forEach((e, i) => {
     e.addEventListener("click", () => setNewIndex(i));
 });
 
-// [0, 1, 2, 3].forEach(e => {
-//     setTimeout(() => selectPointer(e), 2000);
-// });
-selectPointer(1);
-window.selectPointer = selectPointer;
+setNewIndex(currentIndex);
+// selectPointer(0);
+// imagesPointer(0);
