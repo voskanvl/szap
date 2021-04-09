@@ -1,0 +1,49 @@
+/** @format */
+$shadow: 4px 4px 16px #0007;
+.manager {
+    width: 18vw;
+    position: absolute;
+    bottom: 3rem;
+    left: 12.5vw;
+    transform: translateX(-50%);
+    margin-bottom: 1rem;
+    & > .container {
+        & > .manager-image__container {
+            width: 50%;
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            box-shadow: $shadow;
+            overflow: hidden;
+            & > .manager-image__dummy {
+                margin-top: 100%;
+            }
+            & > img {
+                position: absolute;
+                top: 0;
+                width: auto;
+                height: 100%;
+                // width: 100%;
+            }
+        }
+        & > .manager-name,
+        & > .manager-contact {
+            padding-top: 0.5rem;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & > img {
+                height: 1.4rem;
+                width: auto;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+}

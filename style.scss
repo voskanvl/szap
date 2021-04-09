@@ -1,5 +1,6 @@
 /** @format */
 $shadow: 4px 4px 16px #0007;
+@import url("./manager.scss");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700;900&family=Oswald:wght@200;400;700&display=swap");
 h1,
 h2,
@@ -105,6 +106,19 @@ body {
         & > .description {
             width: 100%;
             overflow: scroll;
+            display: grid;
+            grid-template-rows: 1fr 3fr;
+            place-items: center;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: space-evenly;
+            // align-items: center;
+            & > .description__text {
+                color: black;
+            }
+            & > .description__title {
+                flex: 0 0;
+            }
         }
     }
 }
@@ -153,9 +167,9 @@ body {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 7vh;
+    left: 12.5vw;
+    transform: translate(-50%, -50%);
 }
 .select-carousel {
     bottom: 0;
@@ -231,51 +245,6 @@ body {
         &::after {
             border-width: 10px 5px 0px 5px;
             border-color: black transparent transparent transparent;
-        }
-    }
-}
-.manager {
-    width: 22vw;
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 1rem;
-    & > .container {
-        & > .manager-image__container {
-            width: 50%;
-            position: relative;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 50%;
-            box-shadow: $shadow;
-            overflow: hidden;
-            & > .manager-image__dummy {
-                margin-top: 100%;
-            }
-            & > img {
-                position: absolute;
-                top: 0;
-                width: 100%;
-            }
-        }
-        & > .manager-name,
-        & > .manager-contact {
-            padding-top: 0.5rem;
-            width: 100%;
-            text-align: center;
-            font-size: 1.2rem;
-            line-height: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            & > img {
-                height: 1.4rem;
-                width: auto;
-                padding: 0;
-                margin: 0;
-            }
         }
     }
 }
