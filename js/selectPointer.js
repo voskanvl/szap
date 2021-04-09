@@ -1,7 +1,6 @@
 /** @format */
 import { $, $$, _ } from "./shorts.js";
-import "./shorts";
-
+import { gsap } from "gsap";
 // const pointer = $(".select-carousel__pointer");
 const pointer = $(".pointer");
 const items = $$(".select-carousel__item");
@@ -28,7 +27,8 @@ export const selectPointer = current => {
     currentEl = current;
     const left = items[current].center;
     _(left, pointer);
-    pointer.style.left = left + "px";
+    // pointer.style.left = left + "px";
+    gsap.to(pointer, { left, ease: "elastic.out(1,0.3)" });
 };
 
 const recalc = () =>

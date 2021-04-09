@@ -128,6 +128,7 @@ body {
     height: 44vh;
     background: linear-gradient(135deg, #fff, #ccc);
     transform: translateY(-50%);
+    box-shadow: inset 8px 8px 8px white, inset -8px -8px 8px #5557, $shadow;
 
     & > .specification__title {
         width: 100%;
@@ -152,7 +153,7 @@ body {
         margin: 0.5rem;
         top: 50%;
         transform: translateY(-50%);
-        right: 0;
+        right: 0.5rem;
         height: 30%;
         width: 2px;
         background-color: #555;
@@ -198,17 +199,17 @@ body {
             }
         }
     }
-    & > .select-carousel__pointer {
-        bottom: -1rem;
-        right: 21rem;
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 20px 40px 20px;
-        border-color: transparent transparent #fca742 transparent;
-        filter: drop-shadow($shadow);
-    }
+    // & > .select-carousel__pointer {
+    //     bottom: -1rem;
+    //     right: 21rem;
+    //     position: absolute;
+    //     width: 0;
+    //     height: 0;
+    //     border-style: solid;
+    //     border-width: 0 20px 40px 20px;
+    //     border-color: transparent transparent #fca742 transparent;
+    //     filter: drop-shadow($shadow);
+    // }
 }
 
 .control {
@@ -255,6 +256,6 @@ body {
     height: 0;
     border-style: solid;
     border-width: 0 20px 40px 20px;
-    border-color: transparent transparent #f77 transparent;
-    filter: drop-shadow($shadow);
+    border-color: transparent transparent #fca742 transparent;
+    filter: drop-shadow(0 2px 6px black);
 }

@@ -1,21 +1,23 @@
 /** @format */
-import "./shorts";
 import "./init";
 import "./dragEl.js";
 
 import { selectPointer } from "./selectPointer";
 import data from "../data.json";
 import { $, $$, _ } from "./shorts.js";
+import setIndex from "./setIndex.js";
+
 const items = $$(".select-carousel__item");
 
 let currentIndex = 0;
 
+const setNewIndex = x => {
+    currentIndex = x;
+    setIndex(x);
+};
+
 items.forEach((e, i) => {
-    e.addEventListener("click", () => {
-        currentIndex = i;
-        selectPointer(currentIndex);
-        _(currentIndex);
-    });
+    e.addEventListener("click", () => setNewIndex(i));
 });
 
 // [0, 1, 2, 3].forEach(e => {
