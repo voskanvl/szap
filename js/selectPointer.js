@@ -6,6 +6,7 @@ const pointer = $(".select-pointer");
 const items = $$(".select-carousel__item");
 const itemImages = $$(".select-carousel__item > img");
 const selectCarouselContainer = $(".select-carousel__container");
+import { limiter } from "./limiter.js";
 
 // const selectCarouselLeft = selectCarousel.getBoundingClientRect().left;
 let loadedImages = 0;
@@ -42,9 +43,25 @@ let currentEl = 0;
 export const selectPointer = async current => {
     await calculateItemCenter();
     currentEl = current;
-    const left = items[current].center;
+    const {
+        left: leftContainer,
+        width: widthContainer,
+    } = selectCarouselContainer.getBoundingClientRect();
+    const { value: left, more, less } = limiter(items[current].center)(
+        leftContainer,
+        leftContainer + widthContainer - 25,
+    );
+    // const left = items[current].center;
     // pointer.style.left = left + "px";
-    gsap.to(pointer, { left, ease: "elastic.out(1,0.3)" });
+    gsap.to(pointer, {
+        left,
+        ease: "elastic.out(1,0.3)",
+        rotate: () => {
+            if (more) return 90;
+            if (less) return -90;
+            return 0;
+        },
+    });
 };
 
 const recalc = async () => {

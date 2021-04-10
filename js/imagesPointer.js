@@ -2,6 +2,7 @@
 import { $, $$, _ } from "./shorts.js";
 import { gsap } from "gsap";
 import { debounce } from "./debounce.js";
+import { limiter } from "./limiter.js";
 
 const pointer = $(".images-pointer");
 const mainPanel = $(".main-panel");
@@ -54,14 +55,33 @@ const imagesPointer = async current => {
     await calculateItemCenter();
     currentLeft();
     currentEl = current;
-    const top = items[current].center;
+
+    const {
+        top: topContainer,
+        height: heightContainer,
+    } = imagesCarouselContainer.getBoundingClientRect();
+
+    const { upLimit, downLimit } = {
+        upLimit: topContainer,
+        downLimit: topContainer + heightContainer,
+    };
+
+    const { value: top, more, less } = limiter(items[current].center)(
+        upLimit,
+        downLimit,
+    );
+
     gsap.to(pointer, {
         top,
         y: "-50%",
         x: -pointer.offsetWidth,
         ease: "elastic.out(1,0.3)",
+        rotate: () => {
+            if (more) return -90;
+            if (less) return 90;
+            return 0;
+        },
     });
-    gsap.from(mainPanel, { x: 5, ease: "elastic.out(1.1,0.1)" });
 };
 
 const recalc = async () => {

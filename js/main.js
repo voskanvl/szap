@@ -9,6 +9,7 @@ import { $, $$, _ } from "./shorts.js";
 import setIndex, { setCurrentImage } from "./setIndex.js";
 import imagesPointer from "./imagesPointer";
 import { debounce } from "./debounce";
+import { gsap } from "gsap";
 
 const selectItems = $$(".select-carousel__item");
 let imagesItems = $$(".images-carousel__item");
@@ -18,6 +19,7 @@ let currentIndex = 0;
 const setNewImage = x => {
     setCurrentImage(currentIndex)(x);
     imagesPointer(x);
+    gsap.from(".main-panel", { x: 5, ease: "elastic.out(1.1,0.1)" });
 };
 
 const setNewIndex = x => {
@@ -41,7 +43,7 @@ selectItems.forEach((e, i) => {
 setNewIndex(currentIndex);
 
 //TODO: проработать рекомендации lighthouse
-//TODO: ввести ограничения для поинтеров
 //TODO: решить вопрос с багом основной панели
 //TODO: сделать адаптив @mediaquery
 //TODO: проверить кроссбраузерность
+//TODO: баг, связанный с тем, что в images-carousel при первоначальной загрузки не грузятся картинки
