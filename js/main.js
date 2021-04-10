@@ -2,6 +2,7 @@
 import "regenerator-runtime/runtime.js";
 import "./init";
 import "./dragEl.js";
+import "./buttons.js";
 
 import { selectPointer } from "./selectPointer";
 import data from "../data.json";

@@ -51,10 +51,18 @@ const currentLeft = () => {
 
 let currentEl = 0;
 
+const setCurrentEl = x => {
+    if (!isNaN(Number(x))) return (currentEl = x);
+    if (x === "up" && currentEl > 0) return (currentEl -= 1);
+    if (x === "up" && currentEl <= 0) return;
+    if (x === "down" && currentEl < items.length - 1) return (currentEl += 1);
+    if (x === "down" && currentEl >= items.length - 1) return;
+};
+
 const imagesPointer = async current => {
     await calculateItemCenter();
     currentLeft();
-    currentEl = current;
+    setCurrentEl(current);
 
     const {
         top: topContainer,
@@ -66,7 +74,7 @@ const imagesPointer = async current => {
         downLimit: topContainer + heightContainer,
     };
 
-    const { value: top, more, less } = limiter(items[current].center)(
+    const { value: top, more, less } = limiter(items[currentEl].center)(
         upLimit,
         downLimit,
     );

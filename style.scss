@@ -63,13 +63,14 @@ body {
     & > .main-panel__container {
         padding: 1rem 1rem 1rem 10rem;
         display: grid;
-        grid-template-columns: 200px 2fr 1fr;
+        grid-template-columns: 1fr 4fr 2fr;
         height: 100%;
         & > .images-carousel {
             position: relative;
             & > .images-carousel__container {
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
                 width: 100%;
                 overflow: scroll;
                 position: absolute;
@@ -152,7 +153,8 @@ body {
     background: linear-gradient(135deg, #fff, #ccc);
     transform: translateY(-50%);
     box-shadow: $canvas;
-
+    position: absolute;
+    z-index: 100;
     & > .specification__title {
         width: 100%;
         text-align: center;
@@ -297,4 +299,9 @@ body {
 }
 .manager > .container > .manager-image__container {
     box-shadow: $canvas;
+}
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
