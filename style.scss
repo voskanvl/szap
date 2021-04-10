@@ -61,9 +61,9 @@ body {
     background: linear-gradient(135deg, #ffa451, #c76306);
     box-shadow: $canvas;
     & > .main-panel__container {
-        padding: 1rem 1rem 1rem 8rem;
+        padding: 1rem 1rem 1rem 10rem;
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 200px 2fr 1fr;
         height: 100%;
         & > .images-carousel {
             position: relative;
@@ -86,6 +86,7 @@ body {
         }
         & > .current-image {
             width: 100%;
+            padding: 1.5rem;
             display: flex;
             align-items: center;
             position: relative;
@@ -99,8 +100,9 @@ body {
             width: 100%;
             overflow: scroll;
             display: grid;
-            grid-template-rows: 1fr 3fr;
+            grid-template-rows: 1fr 1fr 3fr;
             place-items: center;
+            position: relative;
             // display: flex;
             // flex-direction: column;
             // justify-content: space-evenly;
@@ -112,9 +114,37 @@ body {
             & > .description__title {
                 flex: 0 0;
             }
+            .description__price {
+                width: 100%;
+            }
+            .description__price-img {
+                width: 100%;
+                position: relative;
+                & > img {
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: -50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+                .description__price-value {
+                    position: absolute;
+                    margin: auto 0;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 2rem;
+                    top: -50%;
+                    transform: translateY(-50%);
+                    font-style: italic;
+                    font-family: "Oswald";
+                    text-shadow: 1px 1px 4px #0007;
+                }
+            }
         }
     }
 }
+
 .specification {
     top: 33.33vh;
     width: 33.33vw;

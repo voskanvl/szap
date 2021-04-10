@@ -47,3 +47,9 @@ setNewIndex(currentIndex);
 //TODO: сделать адаптив @mediaquery
 //TODO: проверить кроссбраузерность
 //TODO: баг, связанный с тем, что в images-carousel при первоначальной загрузки не грузятся картинки
+//
+/*TODO: <picture>
+ <source type="image/webp" srcset="image.webp">
+ <source type="image/jpeg" srcset="image.jpg">
+ <img src="image.jpg" alt="Изображение">
+</picture>*/

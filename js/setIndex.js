@@ -10,6 +10,7 @@ import { debounce } from "./debounce.js";
 const specification = $(".specification__text");
 const descriptionTitle = $(".description__title");
 const descriptionText = $(".description__text");
+const descriptionPriceValue = $(".description__price-value");
 const currentImage = $(".current-image>img");
 const selectCarousel = $(".select-carousel");
 const panels = $$(".panel");
@@ -25,21 +26,18 @@ export const setSpecification = x => {
     });
     specification.innerText = data[x].specification;
 };
+
+const descriptionMotion = {
+    xPercent: 100,
+    ease: "bounce.out",
+    duration: 0.7,
+};
 export const setName = x => {
-    gsap.from(descriptionTitle, {
-        xPercent: 100,
-        ease: "elastic.out(0.5,0.3)",
-        duration: 1.5,
-    });
+    gsap.from(descriptionTitle, descriptionMotion);
     descriptionTitle.innerText = data[x].name;
 };
 export const setDescription = x => {
-    gsap.from(descriptionText, {
-        xPercent: 100,
-        ease: "elastic.out(0.5,0.3)",
-        duration: 1.5,
-        delay: 0.2,
-    });
+    gsap.from(descriptionText, { ...descriptionMotion, delay: 0.2 });
     descriptionText.innerText = data[x].description;
 };
 export const setCurrentImage = idx => x => {
@@ -49,6 +47,11 @@ export const setCurrentImage = idx => x => {
         ease: "power2.in",
     });
     currentImage.setAttribute("src", data[idx].images.additional[x]);
+};
+
+export const setPrice = x => {
+    descriptionPriceValue.textContent = data[x].price;
+    gsap.from(descriptionPriceValue, { opacity: 0, scale: 0.2 });
 };
 
 const shake = () => {
@@ -90,6 +93,7 @@ const setIndex = x => {
     setDescription(x);
     setCurrentImage(x)(0);
     createNewImagesItems(x);
+    setPrice(x);
     shake();
 };
 export default debounce(setIndex, 1000);
