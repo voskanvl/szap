@@ -4,7 +4,8 @@ import { $, $$, _ } from "./shorts.js";
 import { gsap } from "gsap";
 import data from "../data.json";
 import { selectPointer } from "./selectPointer";
-import { imagesPointer } from "./imagesPointer";
+import imagesPointer from "./imagesPointer";
+import { debounce } from "./debounce.js";
 
 const specification = $(".specification__text");
 const descriptionTitle = $(".description__title");
@@ -64,19 +65,6 @@ const shake = () => {
         stagger: 0.1,
         ease: "elastic.out(0.5,0.3)",
     });
-};
-
-const debounce = (fn, time) => {
-    let enabled = true;
-
-    return (...args) => {
-        if (!enabled) return;
-        fn.apply(null, args);
-        enabled = false;
-        setTimeout(() => {
-            enabled = true;
-        }, time);
-    };
 };
 
 export const createNewImagesItems = index => {
