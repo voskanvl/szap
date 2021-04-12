@@ -6,6 +6,7 @@ import "./containers/descriptionTextContainer.js";
 import "./containers/descriptionPrice.js";
 import "./containers/descriptionTitle.js";
 import "./pointers/selectPointer";
+import "./pointers/imagesPointer";
 import "./globalShake.js";
 
 let a = document.querySelector(".select-carousel__container");
