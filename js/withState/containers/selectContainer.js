@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { data } from "../../data.js";
 
 const selectContainer = $(".select-carousel__container");
+const imagesLoaded = new Event("imagesLoaded");
 
 export const fillContainer = () => {
     _(data);
@@ -11,6 +12,14 @@ export const fillContainer = () => {
         return (acc += `<div class="select-carousel__item" data-id="${i}"><img class="select-carousel__item-img" src="${images.main}" alt="${name}"><div class="select-carousel__item-text">${name}</div></div>`);
     }, "");
     selectContainer.innerHTML = inner;
+    const allImgs = $$(".select-carousel__item-img");
+    let unloaded = allImgs.length;
+    allImgs.forEach(img =>
+        img.addEventListener("load", () => {
+            unloaded--;
+            if (unloaded === 0) selectContainer.dispatchEvent(imagesLoaded);
+        }),
+    );
 };
 
 selectContainer.addEventListener("click", e => {

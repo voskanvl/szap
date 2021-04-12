@@ -32,6 +32,9 @@ const render = x => {
 
 state.on("index", x => render(center(selectItems[x])));
 
+container.addEventListener("imagesLoaded", () =>
+    render(center(selectItems[state.getState().index])),
+);
 container.addEventListener("scroll", () =>
     render(center(selectItems[state.getState().index])),
 );
@@ -41,5 +44,3 @@ container.addEventListener("mousewheel", () =>
 window.addEventListener("resize", () =>
     render(center(selectItems[state.getState().index])),
 );
-
-render(center(selectItems[state.getState().index]));
