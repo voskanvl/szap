@@ -1,7 +1,7 @@
-import { $ } from "./shorts.js";
+import { $ } from "../shorts.js";
 import { gsap } from "gsap";
-import { descriptionMotion } from "./descriptionMotion.js";
-import { data } from "./data.js";
+import { descriptionMotion } from "../descriptionMotion.js";
+import { data } from "../data.js";
 
 const descriptionText = $(".description__text");
 export const setDescription = x => {

@@ -1,12 +1,12 @@
 /** @format */
-import { $, $$, _ } from "./shorts.js";
+import { $, $$, _ } from "../shorts.js";
 import { gsap } from "gsap";
 // const pointer = $(".select-carousel__pointer");
 const pointer = $(".select-pointer");
 const items = $$(".select-carousel__item");
 const itemImages = $$(".select-carousel__item > img");
 const selectCarouselContainer = $(".select-carousel__container");
-import { limiter } from "./limiter.js";
+import { limiter } from "../limiter.js";
 
 // const selectCarouselLeft = selectCarousel.getBoundingClientRect().left;
 let loadedImages = 0;

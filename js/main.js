@@ -4,18 +4,11 @@ import "./dragEl.js";
 import "./buttons.js";
 
 import { $$, _ } from "./shorts.js";
-import setIndex, { setNewImage } from "./setIndex.js";
-import imagesPointer from "./imagesPointer";
+import setIndex from "./sets/setIndex.js";
 import { debounce } from "./debounce";
-import { gsap } from "gsap";
+import { setNewImage } from "./sets/setNewImage.js";
 
 let currentIndex = 0;
-
-// const setNewImage = x => {
-//     setCurrentImage(currentIndex)(x);
-//     imagesPointer(x);
-//     gsap.from(".main-panel", { x: 5, ease: "elastic.out(1.1,0.1)" });
-// };
 
 const setNewIndex = x => {
     currentIndex = x;

@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
-import { $ } from "./shorts.js";
-import { data } from "./data.js";
+import { $ } from "../shorts.js";
+import { data } from "../data.js";
 
 const specification = $(".specification__text");
 export const setSpecification = x => {
