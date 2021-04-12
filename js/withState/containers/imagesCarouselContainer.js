@@ -8,7 +8,6 @@ const imagesLoaded = new Event("imagesLoaded");
 
 export const fillContainer = () => {
     const idx = state.getState().index;
-    _("fillContainer", data[idx], idx);
     const inner = data[idx].images.additional.reduce((acc, img, i) => {
         return (acc += `<div class="images-carousel__item" data-id="${i}">
         <img src="${img}" alt="${
@@ -31,10 +30,6 @@ export const fillContainer = () => {
 };
 
 imagesCarouselContainer.addEventListener("click", e => {
-    _(
-        'e.target.closest(".images-carousel__item").dataset.id',
-        e.target.closest(".images-carousel__item").dataset.id,
-    );
     state.setState({
         images: e.target.closest(".images-carousel__item").dataset.id,
     });
