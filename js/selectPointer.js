@@ -51,8 +51,6 @@ export const selectPointer = async current => {
         leftContainer,
         leftContainer + widthContainer - 25,
     );
-    // const left = items[current].center;
-    // pointer.style.left = left + "px";
     gsap.to(pointer, {
         left,
         ease: "elastic.out(1,0.3)",
