@@ -18,13 +18,30 @@ const moveAt = ev => {
 let downed = false;
 let panelEnd = false;
 
-dragEl.addEventListener("mousedown", () => {
+dragEl.addEventListener("mousedown", e => {
+    e.preventDefault();
     downed = true;
 });
-document.addEventListener("mouseup", () => {
+dragEl.addEventListener("pointerdown", e => {
+    e.preventDefault();
+    downed = true;
+});
+document.addEventListener("mouseup", e => {
+    e.preventDefault();
+    downed = false;
+});
+document.addEventListener("pointerup", e => {
+    e.preventDefault();
     downed = false;
 });
 document.addEventListener("mousemove", e => {
+    e.preventDefault();
+    if (downed) {
+        moveAt(e);
+    }
+});
+document.addEventListener("pointermove", e => {
+    e.preventDefault();
     if (downed) {
         moveAt(e);
     }

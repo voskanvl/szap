@@ -1,8 +1,6 @@
-/** @format */
-import { $, $$, _ } from "./shorts.js";
-import data from "../data.json";
+import { $, _ } from "./shorts.js";
+import { data } from "./data.js";
 const selectCarouselContainer = $(".select-carousel__container");
-
 export const createNewSelectItem = index => {
     const selectCarouselItemText = document.createElement("div");
     selectCarouselItemText.classList.add("select-carousel__item-text");

@@ -1,4 +1,3 @@
-/** @format */
 import { $, $$, _ } from "./shorts.js";
 import { gsap } from "gsap";
 import { debounce } from "./debounce.js";
@@ -13,13 +12,18 @@ const itemImages = $$(".images-carousel__container img");
 
 // const selectCarouselLeft = selectCarousel.getBoundingClientRect().left;
 let loadedImages = 0;
-itemImages.forEach((e, i) => {
-    e.addEventListener("load", () => {
-        loadedImages++;
-    });
-});
 
-export const calculateItemCenter = () =>
+const calculateItemCenterSync = () => {
+    items = $$(".images-carousel__item");
+    items.forEach((e, idx) => {
+        const { top, width, height } = e.getBoundingClientRect();
+        const center = top + height / 2;
+        items[idx].center = center;
+    });
+    return items;
+};
+
+export const calculateItemCenter = syncFn =>
     new Promise((resolve, reject) => {
         let i = 0;
         const interval = setInterval(() => {
@@ -30,12 +34,7 @@ export const calculateItemCenter = () =>
             }
 
             if (loadedImages === itemImages.length) {
-                items = $$(".images-carousel__item");
-                items.forEach((e, idx) => {
-                    const { top, width, height } = e.getBoundingClientRect();
-                    const center = top + height / 2;
-                    items[idx].center = center;
-                });
+                const items = syncFn();
                 clearInterval(interval);
                 resolve(items);
             }
@@ -60,7 +59,13 @@ const setCurrentEl = x => {
 };
 
 const imagesPointer = async current => {
-    await calculateItemCenter();
+    itemImages.forEach((e, i) => {
+        e.addEventListener("load", () => {
+            loadedImages++;
+        });
+    });
+
+    await calculateItemCenter(calculateItemCenterSync);
     currentLeft();
     setCurrentEl(current);
 
@@ -93,7 +98,7 @@ const imagesPointer = async current => {
 };
 
 const recalc = async () => {
-    await calculateItemCenter();
+    await calculateItemCenter(calculateItemCenterSync);
     await imagesPointer(currentEl);
 };
 

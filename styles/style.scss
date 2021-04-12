@@ -80,6 +80,7 @@ body {
                     cursor: pointer;
                     & > .images-carousel__item-img {
                         width: 100%;
+                        min-width: 100px;
                         height: auto;
                     }
                 }

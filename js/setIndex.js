@@ -2,7 +2,7 @@
 
 import { $, $$, _ } from "./shorts.js";
 import { gsap } from "gsap";
-import data from "../data.json";
+import { data } from "./data.js";
 import { selectPointer } from "./selectPointer";
 import imagesPointer from "./imagesPointer";
 import { debounce } from "./debounce.js";
@@ -17,6 +17,12 @@ const panels = $$(".panel");
 const manager = $(".manager");
 const title = $(".title");
 const imagesCarouselContainer = $(".images-carousel__container");
+
+export const setNewImage = currentIndex => x => {
+    setCurrentImage(currentIndex)(x);
+    imagesPointer(x);
+    gsap.from(".main-panel", { x: 5, ease: "elastic.out(1.1,0.1)" });
+};
 
 export const setSpecification = x => {
     gsap.from(specification, {
