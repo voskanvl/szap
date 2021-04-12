@@ -4,7 +4,6 @@ import { gsap } from "gsap";
 import { limiter } from "../../limiter.js";
 
 const container = $(".images-carousel__container");
-const selectItems = $$(".images-carousel__item");
 
 const center = element => {
     const { top, height } = element.getBoundingClientRect();
@@ -12,6 +11,7 @@ const center = element => {
 };
 
 const render = x => {
+    _(x);
     const {
         top: containerTop,
         height: containerHeight,
@@ -20,7 +20,10 @@ const render = x => {
         right: containerRight,
     } = container.getBoundingClientRect();
 
-    const pointer = limiter(x)(containerTop, containerTop + containerHeight);
+    const pointer = limiter(x)(
+        containerTop - 10,
+        containerTop + containerHeight + 10,
+    );
 
     gsap.to(".images-pointer", {
         y: pointer.value,
@@ -34,17 +37,19 @@ const render = x => {
     });
 };
 
-state.on("images", x => render(center(selectItems[x])));
+state.on("images", x => render(center($$(".images-carousel__item")[x])));
 
 container.addEventListener("imagesLoaded", () =>
-    render(center(selectItems[state.getState().images])),
+    render(center($$(".images-carousel__item")[state.getState().images])),
 );
 container.addEventListener("scroll", () =>
-    render(center(selectItems[state.getState().images])),
+    render(center($$(".images-carousel__item")[state.getState().images])),
 );
 container.addEventListener("mousewheel", () =>
-    render(center(selectItems[state.getState().images])),
+    render(center($$(".images-carousel__item")[state.getState().images])),
 );
 window.addEventListener("resize", () =>
-    render(center(selectItems[state.getState().images])),
+    render(center($$(".images-carousel__item")[state.getState().images])),
 );
+
+//selectItems меняется при каждой смене index в стейте
