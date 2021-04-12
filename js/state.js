@@ -1,34 +1,48 @@
-const state = {
-    index: 0,
-    images: 0,
-};
+class State {
+    constructor() {
+        this._index = 0;
+        this._images = 0;
+        this._listeners = {
+            index: [],
+            images: [],
+        };
+    }
+    setState({ index, images }) {
+        index = Number(index);
+        images = Number(images);
+        if (typeof index === "number" && index !== this._index) {
+            this._index = index;
+            this._listeners.index.forEach(cb => cb(index));
+        }
+        if (typeof images === "number" && index !== this._index) {
+            this._images = images;
+            this._listeners.images.forEach(cb => cb(images));
+        }
+    }
+    getState() {
+        return {
+            index: this._index,
+            images: this._images,
+        };
+    }
+    on(substate, cb) {
+        if (substate !== "index" && substate !== "images")
+            throw Error('first argument must to be "index" or "images"');
+        this._listeners[substate].push(cb);
+    }
+    off(substate, cb) {
+        if (substate !== "index" && substate !== "images")
+            throw Error('first argument must to be "index" or "images"');
+        this._listeners[substate] = this._listeners[substate].filter(
+            e => e != cb,
+        );
+    }
+}
 
-const listeners = {
-    index: [],
-    images: [],
-};
+// export const off = (substate, cb) => {
+//     if (substate !== "index" || substate !== "images")
+//         throw Error('first argument must to be "index" or "images"');
+//     listeners[substate] = listeners[substate].filter(e => e != cb);
+// };
 
-export const setState = {
-    Index: x => {
-        state.index = x;
-        listeners.index.forEach(cb => cb(x));
-    },
-    Images: x => {
-        state.images = x;
-        listeners.images.forEach(cb => cb(x));
-    },
-};
-export const getState = {
-    Index: () => state.index,
-    Images: () => state.images,
-};
-export const on = (substate, cb) => {
-    if (substate !== "index" || substate !== "images")
-        throw Error('first argument must to be "index" or "images"');
-    listeners[substate].push(cb);
-};
-export const off = (substate, cb) => {
-    if (substate !== "index" || substate !== "images")
-        throw Error('first argument must to be "index" or "images"');
-    listeners[substate] = listeners[substate].filter(e => e != cb);
-};
+export const state = new State();
