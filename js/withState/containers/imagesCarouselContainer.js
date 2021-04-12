@@ -7,16 +7,15 @@ const imagesCarouselContainer = $(".images-carousel__container");
 const imagesLoaded = new Event("imagesLoaded");
 
 export const fillContainer = () => {
-    const inner = data[state.getState().index].images.additional.reduce(
-        (acc, img, i) => {
-            return (acc += `<div class="images-carousel__item" data-id="${i}">
+    const idx = state.getState().index;
+    _("fillContainer", data[idx], idx);
+    const inner = data[idx].images.additional.reduce((acc, img, i) => {
+        return (acc += `<div class="images-carousel__item" data-id="${i}">
         <img src="${img}" alt="${
-                data[state.getState().index].name
-            }-${i}" class="images-carousel__item-img">
+            data[state.getState().index].name
+        }-${i}" class="images-carousel__item-img">
     </div>`);
-        },
-        "",
-    );
+    }, "");
     imagesCarouselContainer.innerHTML = inner;
     const allImgs = $$(".images-carousel__item-img");
     let unloaded = allImgs.length;
@@ -26,12 +25,16 @@ export const fillContainer = () => {
             unloaded--;
             if (unloaded === 0)
                 imagesCarouselContainer.dispatchEvent(imagesLoaded);
-        }),
-            tl.from(img, { xPercent: -100 });
+        });
+        tl.from(img, { xPercent: -100 });
     });
 };
 
 imagesCarouselContainer.addEventListener("click", e => {
+    _(
+        'e.target.closest(".images-carousel__item").dataset.id',
+        e.target.closest(".images-carousel__item").dataset.id,
+    );
     state.setState({
         images: e.target.closest(".images-carousel__item").dataset.id,
     });
