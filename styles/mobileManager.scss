@@ -5,14 +5,14 @@
         left: unset;
         right: unset;
         transform: none;
+        margin: 0;
+        padding: 0 0.5rem;
         position: relative;
-        padding-top: 0.5rem;
-        // top: 1rem;
-        // right: 1rem;
         & > .container {
+            position: relative;
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 5fr;
+            grid-template-columns: 1fr 2fr;
             grid-template-rows: 1fr 1fr;
             & > .manager-image__container {
                 width: 65px !important;
@@ -24,8 +24,9 @@
             & > .manager-name,
             & > .manager-contact {
                 font-size: 0.6rem !important;
-                padding-left: 1rem;
+                // padding-left: 1rem;
                 padding-top: 0;
+                text-align: center;
             }
         }
     }
