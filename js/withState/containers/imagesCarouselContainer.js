@@ -2,6 +2,7 @@ import { state } from "../../state";
 import { $, $$, _ } from "../../shorts.js";
 import { gsap } from "gsap";
 import { data } from "../../data.js";
+import { debounce } from "../../debounce";
 
 const imagesCarouselContainer = $(".images-carousel__container");
 const imagesLoaded = new Event("imagesLoaded");
@@ -29,11 +30,14 @@ export const fillContainer = () => {
     });
 };
 
-imagesCarouselContainer.addEventListener("click", e => {
-    state.setState({
-        images: e.target.closest(".images-carousel__item").dataset.id,
-    });
-});
+imagesCarouselContainer.addEventListener(
+    "click",
+    debounce(e => {
+        state.setState({
+            images: e.target.closest(".images-carousel__item").dataset.id,
+        });
+    }, 500),
+);
 
 state.on("index", fillContainer);
 

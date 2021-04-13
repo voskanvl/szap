@@ -1,21 +1,21 @@
 import { data } from "../../data";
 import { state } from "../../state";
 import { $, $$, _ } from "../../shorts.js";
-import { gsap } from "gsap";
-import { debounce } from "../../debounce.js";
+import { animation } from "../animationConfig";
 
 const descriptionPriceValue = $(".description__price-value");
 
 const render = x => {
     descriptionPriceValue.innerText = data[x].price;
-    gsap.from(descriptionPriceValue, {
-        xPercent: -100,
-        ease: "elastic.out(1,0.4)",
-        duration: 1.5,
-        delay: 0.4,
+    animation(descriptionPriceValue, {
+        xPercent: 40,
+        yPercent: null,
+        scale: 1,
+        opacity: 1,
+        ease: "power1.out",
     });
 };
 
-state.on("index", debounce(render, 1500));
+state.on("index", render);
 
 render(state.getState().index);

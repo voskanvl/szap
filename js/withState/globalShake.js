@@ -1,6 +1,5 @@
 import { state } from "../state";
 import { gsap } from "gsap";
-import { debounce } from "../debounce.js";
 
 const render = x => {
     gsap.from([".panel", ".background__leftside"], {
@@ -11,6 +10,6 @@ const render = x => {
     });
 };
 
-state.on("index", debounce(render, 1500));
+state.on("index", render);
 
 render(state.getState().index);
