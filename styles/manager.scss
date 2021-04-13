@@ -1,5 +1,6 @@
 /** @format */
 $shadow: 4px 4px 16px #0007;
+
 .manager {
     width: 18vw;
     position: absolute;
@@ -47,3 +48,4 @@ $shadow: 4px 4px 16px #0007;
         }
     }
 }
+@import "mobileManager";
