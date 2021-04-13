@@ -10,9 +10,6 @@ class State {
     setState({ index, images }) {
         index = Number(index);
         images = Number(images);
-        console.log(index, images);
-        console.log("state", this._index, this._images);
-        console.log("_listeners", this._listeners);
         if (
             typeof index === "number" &&
             index !== this._index &&
@@ -23,7 +20,7 @@ class State {
         }
         if (
             typeof images === "number" &&
-            index !== this._index &&
+            images !== this._images &&
             !isNaN(images)
         ) {
             this._images = images;
