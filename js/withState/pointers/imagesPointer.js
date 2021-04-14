@@ -22,7 +22,7 @@ const render = x => {
 
     const pointer = limiter(x)(
         containerTop - 10,
-        containerTop + containerHeight + 10,
+        containerTop + containerHeight - 32,
     );
 
     gsap.to(".images-pointer", {
