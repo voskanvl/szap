@@ -1,0 +1,42 @@
+.specification {
+    top: 33.33vh;
+    width: 33.33vw;
+    height: 44vh;
+    background: linear-gradient(135deg, #fff, #ccc);
+    transform: translateY(-50%);
+    box-shadow: $canvas;
+    position: absolute;
+    z-index: 100;
+    & > .specification__title {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+        touch-action: none;
+    }
+    & > .specification__text-container {
+        overflow: scroll;
+        width: 100%;
+        position: relative;
+        margin: 1rem 0;
+        // padding: 1rem;
+        height: 80%;
+        & > .specification__text {
+            padding: 1rem;
+            columns: 2;
+            column-rule: dotted #ffa451;
+        }
+    }
+    & > .specification__drag {
+        position: absolute;
+        margin: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0.5rem;
+        height: 30%;
+        width: 2px;
+        background-color: #555;
+        cursor: pointer;
+        box-shadow: 2px 0 6px black;
+        touch-action: none;
+    }
+}
