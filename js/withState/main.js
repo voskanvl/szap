@@ -9,6 +9,7 @@ import "./pointers/selectPointer";
 import "./pointers/imagesPointer";
 import "./buttons/buttons";
 import "./globalShake.js";
+import "./dragEl.js";
 
 let a = document.querySelector(".select-carousel__container");
 a.addEventListener("imagesLoaded", () => console.log("imagesLoaded"));
