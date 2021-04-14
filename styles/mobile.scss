@@ -29,7 +29,7 @@
         top: 14vh;
         height: 60vh;
         margin-top: 0;
-        width: 95vw;
+        width: 98vw;
         & > .main-panel__container {
             padding: 1rem;
             grid-template-columns: 2fr 4fr;
@@ -37,6 +37,11 @@
             grid-gap: 0.5rem;
             & > .images-carousel {
                 & > .images-carousel__container {
+                    scrollbar-width: 0;
+                    &::-webkit-scrollbar {
+                        width: 0;
+                    }
+
                     & > .images-carousel__item {
                         & > .images-carousel__item-img {
                             min-width: none;
@@ -70,11 +75,16 @@
     }
     .select-carousel {
         bottom: 0rem;
-        width: 95vw;
+        width: 98vw;
         height: 14vh;
         & > .select-carousel__container {
             font-size: 0.8rem;
             height: 100%;
+            scrollbar-width: 0;
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+
             & > .select-carousel__item {
                 & > .select-carousel__item-img {
                     height: 8vh;
