@@ -40,5 +40,9 @@ imagesCarouselContainer.addEventListener(
 );
 
 state.on("index", fillContainer);
+state.on("images", x => {
+    const items = $$(".images-carousel__item");
+    items[x].scrollIntoView({ behavior: "smooth" });
+});
 
 fillContainer();
