@@ -57,4 +57,4 @@ dragEl.addEventListener("dblclick", () => {
           });
     panelEnd = !panelEnd;
 });
-onresize = () => (panelWidth = panel.getBoundingClientRect().width);
+onresize = () => gsap.to(panel, { width: startPanelWidth, ease: "bounce.out" });
