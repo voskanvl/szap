@@ -1,0 +1,22 @@
+.select-pointer {
+    bottom: 1rem;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 40px 20px;
+    border-color: transparent transparent #fca742 transparent;
+    filter: drop-shadow(0 2px 6px black);
+}
+.images-pointer {
+    // right: -1rem;
+    top: 1rem;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 40px 20px 0px;
+    border-color: transparent #bf3f32 transparent transparent;
+    filter: drop-shadow($shadow);
+}
+@import "mobilePointers";
