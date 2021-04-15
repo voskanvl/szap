@@ -9,7 +9,10 @@ import { setPrice } from "./setPrice.js";
 import { setCurrentImage } from "./setCurrentImage.js";
 import { createNewImagesItems } from "./createNewImagesItems.js";
 
+let currentIndex = 0;
+
 const setIndex = x => {
+    currentIndex = x;
     selectPointer(x);
     imagesPointer(0);
     setSpecification(x);
@@ -20,4 +23,6 @@ const setIndex = x => {
     setPrice(x);
     shake();
 };
+
+export const getCurrentIndex = () => currentIndex;
 export default debounce(setIndex, 1000);

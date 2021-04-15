@@ -61,6 +61,7 @@ body {
     height: 66.66vh;
     background: linear-gradient(135deg, #ffa451, #c76306);
     box-shadow: $canvas;
+
     & > .main-panel__container {
         padding: 1rem 1rem 1rem 10rem;
         display: grid;
@@ -93,10 +94,13 @@ body {
             display: flex;
             align-items: center;
             position: relative;
-            & > img {
+            & > .main-img {
                 width: 100%;
-                height: auto;
+                height: 100%;
                 filter: drop-shadow(2px 2px 6px black);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
             }
         }
         & > .description {
@@ -148,46 +152,7 @@ body {
     }
 }
 
-.specification {
-    top: 33.33vh;
-    width: 33.33vw;
-    height: 44vh;
-    background: linear-gradient(135deg, #fff, #ccc);
-    transform: translateY(-50%);
-    box-shadow: $canvas;
-    position: absolute;
-    z-index: 100;
-    & > .specification__title {
-        width: 100%;
-        text-align: center;
-        margin-top: 1rem;
-    }
-    & > .specification__text-container {
-        overflow: scroll;
-        width: 100%;
-        position: relative;
-        margin: 1rem 0;
-        // padding: 1rem;
-        height: 80%;
-        & > .specification__text {
-            padding: 1rem;
-            columns: 2;
-            column-rule: dotted #ffa451;
-        }
-    }
-    & > .specification__drag {
-        position: absolute;
-        margin: 0.5rem;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0.5rem;
-        height: 30%;
-        width: 2px;
-        background-color: #555;
-        cursor: pointer;
-        box-shadow: 2px 0 6px black;
-    }
-}
+@import "specification";
 .background__leftside {
     position: relative;
 }
@@ -228,17 +193,6 @@ body {
             }
         }
     }
-    // & > .select-carousel__pointer {
-    //     bottom: -1rem;
-    //     right: 21rem;
-    //     position: absolute;
-    //     width: 0;
-    //     height: 0;
-    //     border-style: solid;
-    //     border-width: 0 20px 40px 20px;
-    //     border-color: transparent transparent #fca742 transparent;
-    //     filter: drop-shadow($shadow);
-    // }
 }
 
 .control {
@@ -287,4 +241,15 @@ button {
     border: none;
     cursor: pointer;
 }
-@import "mobile/mobile";
+@media (max-width: 420px) {
+    @import "mobile/mobile";
+    @import "mobile/mobilePointers";
+    @import "mobile/mobileManager";
+    @import "mobile/mobileSpecification";
+}
+@media (max-width: 1024px) and (min-width: 421px) {
+    @import "tablet/tablet";
+    @import "tablet/tabletPointers";
+    @import "tablet/tabletManager";
+    @import "tablet/tabletSpecification";
+}

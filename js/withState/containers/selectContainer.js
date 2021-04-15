@@ -8,7 +8,6 @@ const selectContainer = $(".select-carousel__container");
 const imagesLoaded = new Event("imagesLoaded");
 
 export const fillContainer = () => {
-    _(data);
     const inner = data.reduce((acc, { name, images }, i) => {
         return (acc += `<div class="select-carousel__item" data-id="${i}"><img class="select-carousel__item-img" src="${images.main}" alt="${name}"><div class="select-carousel__item-text">${name}</div></div>`);
     }, "");

@@ -1,0 +1,26 @@
+.specification {
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 50vh;
+    width: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0;
+    & > .specification__title {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding: 0.5rem;
+        width: 2rem;
+    }
+    & > .specification__drag {
+        display: none;
+    }
+    & > .specification__text-container {
+        height: auto;
+        margin: 1rem 0;
+        overflow: auto;
+        & > .specification__text {
+            columns: auto;
+        }
+    }
+}

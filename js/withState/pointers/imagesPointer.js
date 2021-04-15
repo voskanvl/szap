@@ -11,7 +11,6 @@ const center = element => {
 };
 
 const render = x => {
-    _(x);
     const {
         top: containerTop,
         height: containerHeight,

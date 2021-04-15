@@ -1,94 +1,89 @@
-@media (max-width: 420px) {
-    .background {
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > .background__leftside {
+        padding: 0.5rem;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        & > .background__leftside {
-            padding: 0.5rem;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            width: 100%;
-            height: 30vh;
-            // & > * {
-            //     border: 1px dotted black;
-            // }
-            & > .title {
-                padding: 0 0.5rem;
-                font-size: 3rem;
-                left: unset;
-                top: unset;
-                transform: none;
-                position: unset;
-                margin-block: 0;
-                margin-inline: 0;
-            }
+        width: 100%;
+        height: 30vh;
+        // & > * {
+        //     border: 1px dotted black;
+        // }
+        & > .title {
+            padding: 0 0.5rem;
+            font-size: 3rem;
+            left: unset;
+            top: unset;
+            transform: none;
+            position: unset;
+            margin-block: 0;
+            margin-inline: 0;
         }
     }
-    .main-panel {
-        top: 14vh;
-        height: 60vh;
-        margin-top: 0;
-        width: 98vw;
-        & > .main-panel__container {
-            padding: 1rem;
-            grid-template-columns: 2fr 4fr;
-            grid-template-rows: 1fr 1fr;
-            grid-gap: 0.5rem;
-            & > .images-carousel {
-                & > .images-carousel__container {
-                    scrollbar-width: 0;
-                    &::-webkit-scrollbar {
-                        width: 0;
-                    }
+}
+.main-panel {
+    top: 14vh;
+    height: 60vh;
+    margin-top: 0;
+    width: 98vw;
+    & > .main-panel__container {
+        padding: 1rem;
+        padding-left: 3rem;
+        grid-template-columns: 2fr 4fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 0.5rem;
+        & > .images-carousel {
+            & > .images-carousel__container {
+                scrollbar-width: 0;
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
 
-                    & > .images-carousel__item {
-                        & > .images-carousel__item-img {
-                            min-width: none;
-                        }
+                & > .images-carousel__item {
+                    & > .images-carousel__item-img {
+                        min-width: none;
                     }
                 }
             }
-            & > .description {
-                grid-column: 1/3;
-                grid-template-rows: 50px 35px auto;
-                & > .description__title {
-                    font-size: 2.2rem;
-                }
-                & > .description__price {
-                    // position: fixed;
-                    width: 40vw;
-                    // right: 0;
-                    // top: 0;
-                    & > .description__price-img {
-                        & > .description__price-value {
-                            font-size: 1.5rem !important;
-                        }
+        }
+        & > .description {
+            grid-column: 1/3;
+            grid-template-rows: 50px 35px auto;
+            & > .description__title {
+                font-size: 2.2rem;
+            }
+            & > .description__price {
+                // position: fixed;
+                width: 40vw;
+                // right: 0;
+                // top: 0;
+                & > .description__price-img {
+                    & > .description__price-value {
+                        font-size: 1.5rem !important;
                     }
                 }
             }
         }
     }
-    .specification {
-        top: 50vh !important;
-        display: none;
-    }
-    .select-carousel {
-        bottom: 0rem;
-        width: 98vw;
-        height: 14vh;
-        & > .select-carousel__container {
-            font-size: 0.8rem;
-            height: 100%;
-            scrollbar-width: 0;
-            &::-webkit-scrollbar {
-                width: 0;
-            }
+}
+.select-carousel {
+    bottom: 0rem;
+    width: 98vw;
+    height: 14vh;
+    & > .select-carousel__container {
+        font-size: 0.8rem;
+        height: 100%;
+        scrollbar-width: 0;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
 
-            & > .select-carousel__item {
-                & > .select-carousel__item-img {
-                    height: 8vh;
-                }
+        & > .select-carousel__item {
+            & > .select-carousel__item-img {
+                height: 8vh;
             }
         }
     }

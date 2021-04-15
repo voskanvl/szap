@@ -2,7 +2,7 @@
     top: 33.33vh;
     width: 33.33vw;
     height: 44vh;
-    background: linear-gradient(135deg, #fff, #ccc);
+    background: linear-gradient(135deg, #fffb, #cccf);
     transform: translateY(-50%);
     box-shadow: $canvas;
     position: absolute;
@@ -22,8 +22,9 @@
         height: 80%;
         & > .specification__text {
             padding: 1rem;
-            columns: 2;
+            // columns: 2;
             column-rule: dotted #ffa451;
+            opacity: 0;
         }
     }
     & > .specification__drag {

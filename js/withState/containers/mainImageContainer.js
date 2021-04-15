@@ -3,10 +3,11 @@ import { state } from "../../state";
 import { $, $$, _ } from "../../shorts.js";
 import { animation } from "../animationConfig";
 
-const mainImage = $(".current-image img");
+const mainImage = $(".main-img");
 
 const render = images => index => {
-    mainImage.src = data[index].images.additional[images];
+    _(data[index].images.additional[images]);
+    mainImage.style.backgroundImage = `url(${data[index].images.additional[images]})`;
     animation(mainImage);
 };
 

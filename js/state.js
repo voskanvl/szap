@@ -10,19 +10,11 @@ class State {
     setState({ index, images }) {
         index = Number(index);
         images = Number(images);
-        if (
-            typeof index === "number" &&
-            index !== this._index &&
-            !isNaN(index)
-        ) {
+        if (index !== this._index && !isNaN(index)) {
             this._index = index;
             this._listeners.index.forEach(cb => cb(index));
         }
-        if (
-            typeof images === "number" &&
-            images !== this._images &&
-            !isNaN(images)
-        ) {
+        if (images !== this._images && !isNaN(images)) {
             this._images = images;
             this._listeners.images.forEach(cb => cb(images));
         }
