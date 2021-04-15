@@ -59,7 +59,7 @@ body {
     top: 0;
     width: 75vw;
     height: 66.66vh;
-    background: linear-gradient(135deg, #ffa451, #c76306);
+    background: linear-gradient(90deg, #ffa451, #c7630644);
     box-shadow: $canvas;
 
     & > .main-panel__container {
@@ -168,7 +168,7 @@ body {
     bottom: 0;
     width: 75vw;
     height: 20vh;
-    background: linear-gradient(135deg, #bf3f32, #a04a40);
+    background: linear-gradient(90deg, #a04a40, #bf3f3244);
     margin-bottom: 2rem;
     display: flex;
     justify-content: center;
