@@ -96,3 +96,8 @@ addEventListener("resize", () => {
             .to(specificationText, { opacity: 1 });
     }
 });
+
+window.matchMedia("(max-width: 420px)").addListener(() => _("кряк"));
+window
+    .matchMedia("(max-width: 1024px) and (min-width: 421px)")
+    .addListener(() => _("кряк 2"));
