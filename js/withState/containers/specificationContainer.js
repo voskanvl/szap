@@ -75,6 +75,13 @@ const handlerDblclick = e => {
               width: innerWidth,
               ease: "bounce.out",
           });
+
+    const newWidth = limiter(
+        panelEnd ? startPanelWidth : innerWidth - dragEl.offsetWidth / 2,
+    )(startPanelWidth, innerWidth);
+    gsap.to(specificationText, {
+        columnCount: () => ((newWidth.value / 360) | 0) + 1,
+    });
     panelEnd = !panelEnd;
 };
 
@@ -95,9 +102,18 @@ addEventListener("resize", () => {
             })
             .to(specificationText, { opacity: 1 });
     }
-});
 
-window.matchMedia("(max-width: 420px)").addListener(() => _("кряк"));
-window
-    .matchMedia("(max-width: 1024px) and (min-width: 421px)")
-    .addListener(() => _("кряк 2"));
+    const handlerMatchMedia = e => {
+        if (e.matches) {
+            startPanelWidth = 32;
+            gsap.to(panel, { width: 32 });
+            return;
+        }
+        startPanelWidth = 0.3333 * innerWidth;
+        gsap.to(panel, { width: startPanelWidth });
+    };
+
+    window
+        .matchMedia("(max-width: 1024px)")
+        .addEventListener("change", handlerMatchMedia);
+});
