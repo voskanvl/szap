@@ -1,0 +1,31 @@
+.manager {
+    width: unset;
+    bottom: unset;
+    left: unset;
+    right: unset;
+    transform: none;
+    margin: 0;
+    padding: 0 0.5rem;
+    position: relative;
+    & > .container {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        & > .manager-image__container {
+            width: 100px;
+            left: 0 !important;
+            top: 0 !important;
+            grid-row: 1/3;
+            transform: none !important;
+        }
+        & > .manager-name,
+        & > .manager-contact {
+            font-size: 1rem;
+            // padding-left: 1rem;
+            padding-top: 0;
+            text-align: center;
+        }
+    }
+}
