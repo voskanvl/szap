@@ -24,8 +24,10 @@ $shadow: 4px 4px 16px #0007;
             & > img {
                 position: absolute;
                 top: 0;
+                transform: translateX(-20%);
                 width: auto;
                 height: 100%;
+                object-position: center;
                 // width: 100%;
             }
         }

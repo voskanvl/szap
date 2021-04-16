@@ -12,6 +12,7 @@ import "./globalShake";
 // import "./dragEl.js";
 import { $ } from "./shorts";
 import { gsap } from "gsap";
+import { managerData } from "./managerData";
 
 onload = () => {
     const specification__text = $(".specification__text");
@@ -23,6 +24,19 @@ onload = () => {
         .to(specification__text, {
             opacity: 1,
         });
+    //=========== MANAGER=============
+    const managerHTML = $(".manager>.container");
+    const { img, name, contact } = managerData();
+    managerHTML.innerHTML = `
+    <div class="manager-image__container">
+        <div class="manager-image__dummy"></div>
+        <img src="${img}" alt="${img}">
+    </div>
+    <div class="manager-name">${name}</div>
+    <div class="manager-contact">
+        <img src="/phone-call.46916504.svg">
+        <div>${contact}</div>
+    </div>`;
 };
 
 //TODO: сделать начальную инициализацию, что бы нижний указатель сразу вставал на 0
