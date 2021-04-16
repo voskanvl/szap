@@ -1,8 +1,8 @@
-import { data } from "../../data";
-import { state } from "../../state";
-import { $, _ } from "../../shorts.js";
+import { data } from "../data";
+import { state } from "../state";
+import { $, _ } from "../shorts.js";
 import { animation } from "../animationConfig";
-import { limiter } from "../../limiter.js";
+import { limiter } from "../limiter.js";
 import { gsap } from "gsap";
 
 const specification = $(".specification__text");

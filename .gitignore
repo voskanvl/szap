@@ -4,3 +4,5 @@ dist
 .DS_Store
 .parcel-cache
 product
+.firebase
+*firebase*

@@ -1,16 +1,16 @@
-import "./containers/selectContainer.js";
+import "./containers/selectContainer";
 import "./containers/imagesCarouselContainer";
 import "./containers/specificationContainer";
-import "./containers/mainImageContainer.js";
-import "./containers/descriptionTextContainer.js";
-import "./containers/descriptionPrice.js";
-import "./containers/descriptionTitle.js";
+import "./containers/mainImageContainer";
+import "./containers/descriptionTextContainer";
+import "./containers/descriptionPrice";
+import "./containers/descriptionTitle";
 import "./pointers/selectPointer";
 import "./pointers/imagesPointer";
 import "./buttons/buttons";
-import "./globalShake.js";
+import "./globalShake";
 // import "./dragEl.js";
-import { $ } from "../shorts";
+import { $ } from "./shorts";
 import { gsap } from "gsap";
 
 onload = () => {

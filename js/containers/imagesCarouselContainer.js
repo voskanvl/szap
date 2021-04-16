@@ -1,8 +1,8 @@
-import { state } from "../../state";
-import { $, $$, _ } from "../../shorts.js";
+import { state } from "../state";
+import { $, $$, _ } from "../shorts.js";
 import { gsap } from "gsap";
-import { data } from "../../data.js";
-import { debounce } from "../../debounce";
+import { data } from "../data.js";
+import { debounce } from "../debounce";
 
 const imagesCarouselContainer = $(".images-carousel__container");
 const imagesLoaded = new Event("imagesLoaded");

@@ -1,7 +1,7 @@
-import { state } from "../../state";
-import { $, $$, _ } from "../../shorts.js";
+import { state } from "../state";
+import { $, $$, _ } from "../shorts.js";
 import { gsap } from "gsap";
-import { limiter } from "../../limiter.js";
+import { limiter } from "../limiter.js";
 
 const container = $(".images-carousel__container");
 

@@ -1,6 +1,6 @@
-import { data } from "../../data";
-import { state } from "../../state";
-import { $, $$, _ } from "../../shorts.js";
+import { data } from "../data";
+import { state } from "../state";
+import { $, $$, _ } from "../shorts.js";
 import { animation } from "../animationConfig";
 
 const mainImage = $(".main-img");

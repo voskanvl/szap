@@ -1,9 +1,9 @@
-import { data } from "../../data";
-import { state } from "../../state";
-import { $, $$, _ } from "../../shorts.js";
+import { data } from "../data";
+import { state } from "../state";
+import { $, $$, _ } from "../shorts";
 import { gsap } from "gsap";
-import { debounce } from "../../debounce.js";
-import { limiter } from "../../limiter";
+import { debounce } from "../debounce";
+import { limiter } from "../limiter";
 
 const buttonUp = $(".current-image__control.up");
 const buttonDown = $(".current-image__control.down");
