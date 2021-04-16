@@ -33,9 +33,11 @@ export const fillContainer = () => {
 imagesCarouselContainer.addEventListener(
     "click",
     debounce(e => {
-        state.setState({
-            images: e.target.closest(".images-carousel__item").dataset.id,
-        });
+        const id = e.target.closest(".images-carousel__item")?.dataset?.id;
+        if (id)
+            state.setState({
+                images: e.target.closest(".images-carousel__item").dataset.id,
+            });
     }, 500),
 );
 
