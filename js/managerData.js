@@ -27,5 +27,5 @@ export const managerData = () => {
             contact: "+7(905)900-88-51",
         },
     ];
-    return data[Math.floor(Math.random() * (data.length - 0.5) + 0.5)];
+    return data[(Math.random() * (data.length - 0.5) + 0.5) | 0];
 };
