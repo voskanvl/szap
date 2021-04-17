@@ -9,6 +9,7 @@ const imagesLoaded = new Event("imagesLoaded");
 
 export const fillContainer = () => {
     const idx = state.getState().index;
+
     const inner = data[idx].images.additional.reduce((acc, img, i) => {
         return (acc += `<div class="images-carousel__item" data-id="${i}">
         <img src="${img}" alt="${
@@ -16,10 +17,15 @@ export const fillContainer = () => {
         }-${i}" class="images-carousel__item-img">
     </div>`);
     }, "");
+
     imagesCarouselContainer.innerHTML = inner;
+
     const allImgs = $$(".images-carousel__item-img");
+
     let unloaded = allImgs.length;
+
     const tl = gsap.timeline({ defaults: { duration: 0.2 } });
+
     allImgs.forEach((img, i) => {
         img.addEventListener("load", () => {
             unloaded--;
@@ -44,7 +50,7 @@ imagesCarouselContainer.addEventListener(
 state.on("index", fillContainer);
 state.on("images", x => {
     const items = $$(".images-carousel__item");
-    items[x].scrollIntoView({ behavior: "smooth" });
+    items[x].scrollIntoView({ behavior: "smooth", block: "center" });
 });
 
 fillContainer();
