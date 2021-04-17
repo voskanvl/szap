@@ -19,7 +19,10 @@ const render = x => {
         right: containerRight,
     } = container.getBoundingClientRect();
 
-    const pointer = limiter(x)(containerTop, containerTop + containerHeight);
+    const pointer = limiter(x)(
+        containerTop,
+        containerTop + containerHeight - 32,
+    );
 
     gsap.to(".images-pointer", {
         y: pointer.value,
