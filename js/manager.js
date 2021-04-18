@@ -1,6 +1,5 @@
 import { $ } from "./shorts";
 import { managerData } from "./managerData";
-
 export const manager = () => {
     const managerHTML = $(".manager>.container");
     const { img, name, contact } = managerData();
@@ -11,7 +10,7 @@ export const manager = () => {
     </div>
     <div class="manager-name">${name}</div>
     <div class="manager-contact">
-        <img src="/phone-call.46916504.svg" alt="phone">
+        <img src="${phone}" alt="phone">
         <a href="tel:${contact.replace(/[(|)|-]/g, "")}">${contact}</a>
     </div>`;
 };

@@ -1,4 +1,10 @@
-import pngs from "../assets/*.png";
+// import pngs from "../assets/*.png";
+import img0 from "url:../assets/8594.png";
+import img1 from "url:../assets/Polupritsep-traktornyy-samosvalnyy-PPTS-4-5-245x156.png";
+import img2 from "url:../assets/prcp.png";
+import img3 from "url:../assets/pricepy-i-polupricepy_50965afd4fe2bf2_800x600.png";
+import img4 from "url:../assets/unnamed.png";
+
 export const data = [
     {
         name: "8594",
@@ -8,14 +14,8 @@ export const data = [
             "Cillum duis do consectetur nulla consectetur laborum ullamco ad amet. Anim minim aute proident in sint. Veniam mollit dolor reprehenderit et eu minim nulla ad aliqua. Eiusmod aute ex irure labore magna ut incididunt do.",
         price: "1 200 000",
         images: {
-            main: pngs["8594"],
-            additional: [
-                pngs["8594"],
-                pngs["8594"],
-                pngs["8594"],
-                pngs["8594"],
-                pngs["8594"],
-            ],
+            main: img0,
+            additional: [img0, img0, img0, img0, img0],
         },
     },
     {
@@ -26,14 +26,8 @@ export const data = [
             "Consequat nostrud cupidatat amet ullamco laboris qui esse laborum et irure qui consequat. Sint do duis occaecat adipisicing mollit. Ullamco cupidatat deserunt voluptate veniam ad ipsum ipsum nostrud voluptate. Adipisicing ut eiusmod in ut nisi. Aliqua officia officia ea eu nulla. Do labore cillum qui proident deserunt dolore in deserunt duis proident commodo. Anim nisi labore magna aute adipisicing laboris in qui adipisicing fugiat duis non.",
         price: "600 000",
         images: {
-            main: pngs["Polupritsep-traktornyy-samosvalnyy-PPTS-4-5-245x156"],
-            additional: [
-                pngs["Polupritsep-traktornyy-samosvalnyy-PPTS-4-5-245x156"],
-                pngs["Polupritsep-traktornyy-samosvalnyy-PPTS-4-5-245x156"],
-                pngs["Polupritsep-traktornyy-samosvalnyy-PPTS-4-5-245x156"],
-                pngs["Polupritsep-traktornyy-samosvalnyy-PPTS-4-5-245x156"],
-                pngs["Polupritsep-traktornyy-samosvalnyy-PPTS-4-5-245x156"],
-            ],
+            main: img1,
+            additional: [img1, img1, img1, img1, img1],
         },
     },
     {
@@ -44,14 +38,8 @@ export const data = [
             "Eu incididunt qui dolor in consectetur quis tempor aliquip. Ullamco aliquip nostrud anim exercitation Lorem nulla deserunt nostrud minim esse ullamco ex tempor. Ut nostrud qui do in ut deserunt proident aliqua labore consectetur sunt. Deserunt occaecat excepteur reprehenderit tempor do eiusmod ad adipisicing aute mollit amet. Consequat et nisi pariatur non do nulla ad excepteur anim enim sint.",
         price: "1 350 000",
         images: {
-            main: pngs["prcp"],
-            additional: [
-                pngs["prcp"],
-                pngs["prcp"],
-                pngs["prcp"],
-                pngs["prcp"],
-                pngs["prcp"],
-            ],
+            main: img2,
+            additional: [img2, img2, img2, img2, img2],
         },
     },
     {
@@ -62,14 +50,8 @@ export const data = [
             "Ad id dolore dolore ad reprehenderit nisi nostrud aliquip. Veniam labore irure adipisicing dolore cupidatat culpa proident nulla eu ipsum. Non aliqua nostrud eiusmod quis pariatur tempor adipisicing.",
         price: "1 300 000",
         images: {
-            main: pngs["pricepy-i-polupricepy_50965afd4fe2bf2_800x600"],
-            additional: [
-                pngs["pricepy-i-polupricepy_50965afd4fe2bf2_800x600"],
-                pngs["pricepy-i-polupricepy_50965afd4fe2bf2_800x600"],
-                pngs["pricepy-i-polupricepy_50965afd4fe2bf2_800x600"],
-                pngs["pricepy-i-polupricepy_50965afd4fe2bf2_800x600"],
-                pngs["pricepy-i-polupricepy_50965afd4fe2bf2_800x600"],
-            ],
+            main: img3,
+            additional: [img3, img3, img3, img3, img3],
         },
     },
     {
@@ -80,14 +62,8 @@ export const data = [
             "Ullamco aliqua proident amet incididunt velit veniam commodo nulla fugiat. Anim ipsum reprehenderit Lorem incididunt sint nisi sint fugiat veniam ut adipisicing Lorem. Consectetur in ullamco dolor ullamco est deserunt do nisi eu aliquip excepteur ea minim.",
         price: "1 400 000",
         images: {
-            main: pngs["unnamed"],
-            additional: [
-                pngs["unnamed"],
-                pngs["unnamed"],
-                pngs["unnamed"],
-                pngs["unnamed"],
-                pngs["unnamed"],
-            ],
+            main: img4,
+            additional: [img4, img4, img4, img4, img4],
         },
     },
 ];
