@@ -1,5 +1,3 @@
-/** @format */
-
 export const debounce = (fn, time) => {
     let enabled = true;
 

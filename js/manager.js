@@ -1,5 +1,6 @@
 import { $ } from "./shorts";
 import { managerData } from "./managerData";
+import phone from "url:../assets/phone-call.svg";
 export const manager = () => {
     const managerHTML = $(".manager>.container");
     const { img, name, contact } = managerData();
