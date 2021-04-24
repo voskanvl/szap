@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+    include head
+    body
+        .site-container
+            .background
+                .background__leftside
+                    h1.title= "SZAP"
+                    .manager
+                        .container
+            .main-panel.panel.panel-right
+                .main-panel__container
+                    .images-carousel
+                        .images-carousel__container
+                            .images-carousel__item
+                                img.images-carousel__item-img(src="assets/pricepy-i-polupricepy_50965afd4fe2bf2_800x600.png", alt="50965")/
+                            .images-carousel__item
+                                img.images-carousel__item-img(src="assets/pricepy-i-polupricepy_50965afd4fe2bf2_800x600.png" alt="50965")/
+                            .images-carousel__item
+                                img.images-carousel__item-img(src="assets/pricepy-i-polupricepy_50965afd4fe2bf2_800x600.png" alt="50965")/
+                            .images-carousel__item
+                                img.images-carousel__item-img(src="assets/pricepy-i-polupricepy_50965afd4fe2bf2_800x600.png" alt="50965")/
+                            .images-carousel__item
+                                img.images-carousel__item-img(src="assets/pricepy-i-polupricepy_50965afd4fe2bf2_800x600.png" alt="50965")/
+                    .current-image
+                        button.control.current-image__control.up(aria-label="up")
+                        .main-img( src="assets/pricepy-i-polupricepy_50965afd4fe2bf2_800x600.png" alt="50965")
+                        button.control.current-image__control.down(aria-label="down")
+                    .description
+                        h2.description__title= 50965
+                        .description__price
+                            .description__price-img
+                                img(src="assets/smear.svg" alt="smear")/
+                                .description__price-value= "1 200 000 р."
+                        .description__text= "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aliquid doloremque vero quaerat sapientesoluta ea voluptatem totam quibusdam itaque impeditveritatis, assumenda perferendis exercitationem cum molestiae quasi rem. Inventore quaerat officia et vel sequi aspernatur enim voluptate hic! Ullam nulla, facere magnam consequuntur in praesentium obcaecati tempore culpa assumenda."
+            .panel.panel-left.specification
+                .specification__title= "Технические данные"
+                .specification__text-container
+                    .specification__text= "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illum at debitis soluta nisi, aliquid sequi sunt modi quas pariatur porro dolorum voluptatibus dignissimos earum quasi esse rem. A ullam perspiciatis illum doloremque voluptatum deleniti maiores pariatur commodi dolore quia sint, nisi ipsa quidem! Quo, recusandae blanditiis, illo placeat eligendi assumenda itaque enim dolorem facilis est a magni, temporibus corporis quaerat modi reprehenderit ullam ducimus excepturi dolore. Blanditiis tenetur laboriosam, corrupti commodi deserunt veniam obcaecati maxime eos delectus nihil minus neque molestiae ab facere repudiandae in exercitationem, distinctio assumenda esse totam? Ab fugiat amet voluptas labore cupiditate? Hic, illo molestias?"
+                .specification__drag
+            
+            .panel.panel-right.select-carousel
+                .select-carousel__container
+        .select-pointer
+        .images-pointer
+        script(src="js/main.js")
